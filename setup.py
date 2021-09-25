@@ -3,7 +3,7 @@ from setuptools import setup
 if __name__ == '__main__':
     setup(
         name="numpytorch",
-        version='0.1.1',
+        version='0.1.2',
         description="Monkey-patched numpy with pytorch syntax",
         long_description=open('README.md', encoding='utf-8').read(),
         long_description_content_type='text/markdown',
@@ -17,7 +17,7 @@ if __name__ == '__main__':
         ],
         keywords='deep learning, tensor manipulation, machine learning, scientific computations',
         install_requires=[
-            'numpy>=1.20',
+            'numpy',
             'forbiddenfruit',
         ],
     )
