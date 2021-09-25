@@ -4,7 +4,7 @@
 
 Monkey-patched `numpy` with `pytorch` syntax.
 
-If you are also tired of `dim, axis, keepdim, keepdims, cat, concatenate` , or wasted enough time debugging `repeat(), meshgrid() `, this package provides a dirty solution:
+If you are also tired of `dim, axis, keepdim, keepdims, cat, concatenate` , or wasted enough time debugging `repeat(), meshgrid()`, this package provides a dirty solution:
 
 ```python
 # Just replace the import
@@ -178,9 +178,13 @@ All of the patched functions and methods are listed below. Unless specifically m
 
 **torch_expand** `(input: numpy.ndarray, *sizes: int)`
 
+Note: the output is read-only since we use `np.broadcast_to` to return a view of the input, which different from the original behavior of `torch.expand()`.
+
 **expand** `(input: numpy.ndarray, *sizes: int)`
 
 **torch_expand_as** `(input: numpy.ndarray, other: numpy.ndarray)`
+
+Note: the output is read-only.
 
 **expand_as** `(input: numpy.ndarray, other: numpy.ndarray)`
 
